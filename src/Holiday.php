@@ -132,7 +132,7 @@ class Holiday
      */
     public function isHoliday ($date = '')
     {
-        $date = $date ? : date('Y-m-d');
+        $date = $date ? date('Y-m-d', strtotime($date)): date('Y-m-d');
         self::_chkDate($date);
 
         $year = substr($date, 0, 4);
